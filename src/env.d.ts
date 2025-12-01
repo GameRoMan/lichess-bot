@@ -1,6 +1,6 @@
 namespace NodeJS {
   interface ProcessEnv {
-    LICHESS_TOKEN?: string;
+    LICHESS_BOT_TOKEN?: string;
     STOCKFISH_PATH?: string;
   }
 }

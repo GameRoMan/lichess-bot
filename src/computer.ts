@@ -8,9 +8,9 @@ export class Computer {
   private client: Lichess;
 
   constructor() {
-    const token = process.env.LICHESS_TOKEN;
+    const token = process.env.LICHESS_BOT_TOKEN;
     if (!token) {
-      throw new Error("LICHESS_TOKEN is not set");
+      throw new Error("LICHESS_BOT_TOKEN is not set");
     }
     this.client = new Lichess({ token });
   }
