@@ -1,11 +1,13 @@
-import { Lichess } from "@lichess/api";
 import type * as schemas from "@lichess/api/schemas";
 
+import { Lichess } from "@lichess/api";
+
+import type { ApiStreamEvent } from "./types";
+
 import { Game } from "./game";
-import type { ApiStreamEvent } from "./lib";
 
 export class Computer {
-  private client: Lichess;
+  private readonly client: Lichess;
 
   constructor() {
     const token = process.env.LICHESS_BOT_TOKEN;

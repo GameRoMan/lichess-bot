@@ -1,8 +1,8 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      LICHESS_BOT_TOKEN?: string;
-      STOCKFISH_PATH?: string;
+      readonly LICHESS_BOT_TOKEN?: string;
+      readonly STOCKFISH_PATH?: string;
     }
   }
 }

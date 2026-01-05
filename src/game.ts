@@ -1,8 +1,9 @@
 import type { Lichess } from "@lichess/api";
 import type * as schemas from "@lichess/api/schemas";
-import type { BotGameStreamEvent } from "./lib";
 
 import { Stockfish } from "@stockfish/bun";
+
+import type { BotGameStreamEvent } from "./types";
 
 export class Game {
   private client: Lichess;
@@ -60,8 +61,8 @@ export class Game {
     await this.stockfish.set_fen_position(this.game.fen!);
     await this.stockfish.make_moves_from_current_position(moves);
 
-    const is_white_turn = moves.length % 2 == 0;
-    const turn = is_white_turn ? "white" : "black";
+    const isWhiteTurn = moves.length % 2 === 0;
+    const turn = isWhiteTurn ? "white" : "black";
 
     if (turn !== this.game.color) {
       return; // Not our turn
